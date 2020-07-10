@@ -79,32 +79,7 @@ def residuals(phases, model_phases, f, phase_errors):
             )
         )
     )
-
-
-
-# def compute_phase_errors(visibilities, model_visibilities, sigma, type="approx"):
-#
-#     if type == "approx":
-#         C = calibration_tools.compute_C_matrix(
-#             visibilities=visibilities,
-#             sigma=sigma
-#         )
-#
-#         A = calibration_utils.compute_A_matrix_from_f_and_C_matrices(
-#             f=f, C=C
-#         )
-#
-#         B = calibration_utils.compute_B_matrix_from_f_and_C_matrices(
-#             f=f, C=C
-#         )
-#
-#         phase_errors = calibration_utils.phase_errors_from_A_and_B_matrices(
-#             phases=visibilities.phases,
-#             model_phases=model_visibilities.phases,
-#             A=A,
-#             B=B
-#         )
-
+    
 
 antennas = fits.getdata(
     filename="./antennas.fits"
