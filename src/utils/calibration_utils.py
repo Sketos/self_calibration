@@ -20,19 +20,6 @@ def wrap(a):
 
 
 def compute_f_matrix_from_antennas(antennas):
-    """Short summary.
-
-    Parameters
-    ----------
-    antennas : type
-        Description of parameter `antennas`.
-
-    Returns
-    -------
-    type
-        Description of returned object.
-
-    """
 
     f = np.zeros(
         shape=(
@@ -52,21 +39,6 @@ def compute_f_matrix_from_antennas(antennas):
 
 
 def compute_A_matrix_from_f_and_C_matrices(f, C):
-    """Short summary.
-
-    Parameters
-    ----------
-    f : type
-        Description of parameter `f`.
-    C : type
-        Description of parameter `C`.
-
-    Returns
-    -------
-    type
-        Description of returned object.
-
-    """
 
     A = np.matmul(
         f,
@@ -77,21 +49,6 @@ def compute_A_matrix_from_f_and_C_matrices(f, C):
 
 
 def compute_B_matrix_from_f_and_C_matrices(f, C):
-    """Short summary.
-
-    Parameters
-    ----------
-    f : type
-        Description of parameter `f`.
-    C : type
-        Description of parameter `C`.
-
-    Returns
-    -------
-    type
-        Description of returned object.
-
-    """
 
     B = np.matmul(f, C)
 
@@ -99,25 +56,6 @@ def compute_B_matrix_from_f_and_C_matrices(f, C):
 
 
 def phase_errors_from_A_and_B_matrices(phases, model_phases, A, B):
-    """Short summary.
-
-    Parameters
-    ----------
-    phases : type
-        Description of parameter `phases`.
-    model_phases : type
-        Description of parameter `model_phases`.
-    A : type
-        Description of parameter `A`.
-    B : type
-        Description of parameter `B`.
-
-    Returns
-    -------
-    type
-        Description of returned object.
-
-    """
 
     phase_difference = wrap(
         a=np.subtract(
@@ -135,24 +73,3 @@ def phase_errors_from_A_and_B_matrices(phases, model_phases, A, B):
     )
 
     return phase_errors
-
-
-def phase_errors(f):
-    pass
-
-    # phase_difference = wrap(
-    #     a=np.subtract(
-    #         phases,
-    #         model_phases
-    #     )
-    # )
-    #
-    # phase_errors = np.linalg.solve(
-    #     A,
-    #     np.matmul(
-    #         B,
-    #         phase_difference
-    #     )
-    # )
-
-    #return phase_errors
